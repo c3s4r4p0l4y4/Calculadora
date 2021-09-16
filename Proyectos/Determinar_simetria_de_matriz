@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    // determianr si una matriz es simetrica
+    int numeros[100][100];
+    int filas, columnas;
+    char band = 'F';
+    cout << "Dijite el numero de filas: ";
+    cin >> filas;
+    cout << "\nDijite el numero de columnas "; 
+    cin >> columnas;
+    for (int i = 0; i < filas; i++) {
+	for (int j = 0; j < columnas; j++) {
+	    cout << "\nDijite el numero [" << i << "][" << j
+	    << "]";
+	    cin >> numeros[i][j];
+	}
+    }
+    if (filas == columnas) {
+	for (int i = 0; i < filas; i++) {
+	    for (int j = 0; j < columnas; j++) {
+		if (numeros[i][j] == numeros[j][i]) {
+		    band = 'V';
+		}
+	    }
+	}
+    }
+    if (band == 'V') {
+	cout << "La matriz es simetrica\n";
+    } else {
+	cout << "La matriz no es simetrica\n";
+    }
+    return 0;
+}
