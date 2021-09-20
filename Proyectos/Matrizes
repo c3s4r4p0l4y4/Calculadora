@@ -1,0 +1,37 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+int main(){
+	// saber si una matriz es simetrica o no
+	int numeros[100][100];
+	int filas, columnas;
+	char bandera = 'F';
+	cout << "--------------------Saber si una matriz es simetrica o no--------------------";
+	cout << "\nDigite el numero de filas: ";
+	cin >> filas;
+	cout << "\nDigite el numero de columnas: ";
+	cin >> columnas;
+	for (int f = 0; f<filas; f++){
+		for (int c = 0; c<columnas; c++){
+			cout << "\nDigite un numero [" << f << "][" << c << "]: ";
+			cin >> numeros[f][c];
+		}
+	}
+
+	if (filas == columnas){
+		for (int f = 0; f<filas; f++){
+			for (int c = 0; c<columnas; c++){
+				if (numeros[f][c] == numeros[c][f]){
+					bandera = 'V';
+				}
+			}
+		}
+	}
+	if (bandera = 'V')
+		cout << "\nLa matriz es simetrica :)\n";
+	else 
+		cout << "\nLa matriz no es simetrica :(\n";
+
+	system("pause");
+	return 0;
+}
