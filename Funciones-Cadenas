@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string.h>
+#include <algorithm>
+using namespace std;
+
+
+void lalongitud(){
+    // calcular la longitud de una cadena de caracteres
+    
+    cout << "Calcular la longitud de una cadena: Funcion - 'strlen()'\n";
+    cout << "Digite una cadena: ";
+    int lon;
+    char longitud[100];
+    cin.getline(longitud, 100, '\n');
+    lon = strlen(longitud);
+    cout << lon;
+}
+
+void copiar_cadena(){
+    cout << "\nCopiar cadenas de caracteres: Funcion - 'strcpy()'\n"; 
+    cout << "Digite una cadena: ";
+    char cadena[100]; 
+    char copia[100]; 
+    cin.getline(cadena, 40, '\n');
+    strcpy(copia, cadena);
+    cout << "La cadena dijitada a sido copiada en la cadena llamada 'copia': " << copia;
+}
+
+void compara(){
+    cout << "\nCompara si las palabras son iguales o siguen el mismo orden alfabeticamente: Funcion - 'strcmp()'\n";
+    char palabra1[100];
+    char palabra2[100];
+    cout << "Digite la primera cadena: ";
+    cin.getline(palabra1, 100, '\n');
+    cout << "Digite la segunda cadena: ";
+    cin.getline(palabra2, 100, '\n');
+    if (strcmp(palabra1, palabra2) == 0){
+        cout << "\nLas palabras son iguales\n";
+    } else {
+        cout << "\nLas palabras no son iguales\n";
+    }
+    if (strcmp(palabra1, palabra2) > 0){
+        cout << '\n' << palabra1 << " es mayor que " << palabra2 << '\n';
+    } else {
+        cout << '\n' << palabra2 << " es mayor que " << palabra1 << '\n';
+    }
+}
+
+void concatenar(){
+    cout << "Concatena palabras: Funcion - 'strcat()'\n";
+    char word2[] = "Hola bienvenido ";
+    char word[100];
+    cout << "Digita tu nombre: ";
+    cin.getline(word, 100, '\n');
+    strcat(word2, word);
+    cout << word2 << '\n';
+}
+
+
+void invertir(){
+    cout << "Invierte cadenas: Funcion - 'reverse()'\n";
+    string s;
+    cin >> s;
+    reverse(s.begin(), s.end());
+    cout << s << '\n';
+}
+
+
+
+
+int main(){
+    cout << "Funciones de la libreria strin.h\n";
+    cout << "\n\nFuncion 1\n";
+    lalongitud();
+    cout << "\n\nFuncion 2\n";
+    copiar_cadena();
+    cout << "\n\nFuncion 3\n";
+    compara();
+    cout << "\n\nFuncion 4\n";
+    concatenar();
+    cout << "\n\nFuncion 5\n";
+    invertir();
+
+    cin.get();
+    return 0;
+}
+
